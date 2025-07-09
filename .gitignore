@@ -1,0 +1,28 @@
+# Ignorar arquivos Python compilados
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignorar arquivos de backup do editor
+*.swp
+*.swo
+
+# Ignorar arquivos temporários do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar ambientes virtuais (caso use)
+venv/
+.env/
+
+# Ignorar arquivos de dados salvos (se quiser deixar só localmente)
+usuario.json
+conta.json
+
+# Ignorar logs ou arquivos temporários
+*.log
+*.tmp
+
+# Ignore o VS Code se estiver usando
+.vscode/
