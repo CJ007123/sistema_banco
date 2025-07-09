@@ -75,6 +75,16 @@ def depositar_em_conta_concorrente(numero_conta:str, deposito: int | float):
 
 
 def saque_em_conta_concorrente(numero_conta:str, saque: int | float):
+    """
+    Realiza um saque de uma conta específica, respeitando o limite diário.
+
+    Parâmetros:
+        numero_conta (str): Número da conta.
+        saque (int | float): Valor a ser sacado.
+
+    Levanta:
+        ValueError: Se a conta não existir, o saldo for insuficiente ou o limite for excedido.
+    """
     Validador.validar_deposito_saque(saque)
     global iniciando_limite
 
@@ -154,13 +164,3 @@ def exibir_extrato(conta_numero:str):
         print('Nenhuma movimentação foi feita aqui')
 
 if __name__ == '__main__':...
-"""
-    Realiza um saque de uma conta específica, respeitando o limite diário.
-
-    Parâmetros:
-        numero_conta (str): Número da conta.
-        saque (int | float): Valor a ser sacado.
-
-    Levanta:
-        ValueError: Se a conta não existir, o saldo for insuficiente ou o limite for excedido.
-    """
