@@ -4,6 +4,21 @@ from datetime import datetime
 usuarios = {}
 
 def criar_usuario(nome: str, cpf: str, data_nascimento: datetime, logradouro: str, numero: str, bairro: str, estado: str):
+    """
+    Cria um novo usuário no sistema após validar todos os dados fornecidos.
+
+    Parâmetros:
+        nome (str): Nome completo do usuário.
+        cpf (str): CPF do usuário, usado como identificador único.
+        data_nascimento (datetime): Data de nascimento do usuário.
+        logradouro (str): Nome da rua ou avenida.
+        numero (str): Número da residência.
+        bairro (str): Bairro do usuário.
+        estado (str): Estado onde o usuário reside.
+
+    Levanta:
+        ValueError: Se o CPF já estiver registrado ou os dados forem inválidos.
+    """
     Validador.validar_nome(nome)
     Validador.validar_cpf(cpf)
     Validador.validando_data_nascimento(data_nascimento)
@@ -31,30 +46,6 @@ def criar_usuario(nome: str, cpf: str, data_nascimento: datetime, logradouro: st
 
 
 
-
-
-
-
-
-
-
-
-"""
-    Cria um novo usuário no sistema após validar todos os dados fornecidos.
-
-    Parâmetros:
-        nome (str): Nome completo do usuário.
-        cpf (str): CPF do usuário, usado como identificador único.
-        data_nascimento (datetime): Data de nascimento do usuário.
-        logradouro (str): Nome da rua ou avenida.
-        numero (str): Número da residência.
-        bairro (str): Bairro do usuário.
-        estado (str): Estado onde o usuário reside.
-
-    Levanta:
-        ValueError: Se o CPF já estiver registrado ou os dados forem inválidos.
-    """
-
 def exbir_informações_do_usuario():
     """
     Exibe todas as informações dos usuários cadastrados no sistema.
@@ -76,7 +67,7 @@ def exbir_informações_do_usuario():
         print(f"Estado: {info['Estado']}")
 
 
-def atualizar_nome_usuario(cpf, novo_nome: str):
+def atualizar_nome_usuario(cpf:str, novo_nome: str):
     """
     Atualiza o nome completo do usuário com base no CPF.
 
